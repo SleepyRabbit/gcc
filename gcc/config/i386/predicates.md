@@ -974,11 +974,11 @@
   (ior (match_operand 0 "nonimmediate_operand")
        (match_code "const_vector")))
 
-;; Return true when OP is nonimmediate or standard SSE constant.
-(define_predicate "nonimmediate_or_sse_const_operand"
+;; Return true when OP is vector or standard SSE constant.
+(define_predicate "vector_or_sse_const_operand"
   (match_operand 0 "general_operand")
 {
-  if (nonimmediate_operand (op, mode))
+  if (vector_operand (op, mode))
     return true;
   if (standard_sse_constant_p (op) > 0)
     return true;
