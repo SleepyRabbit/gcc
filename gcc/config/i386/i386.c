@@ -7243,6 +7243,7 @@ ix86_return_pops_args (tree fundecl, tree funtype, int size)
   return 0;
 }
 
+#if 0
 /* Implement the TARGET_LEGITIMATE_COMBINED_INSN hook.  */
 
 static bool
@@ -7331,6 +7332,7 @@ ix86_legitimate_combined_insn (rtx_insn *insn)
 
   return true;
 }
+#endif
 
 /* Implement the TARGET_ASAN_SHADOW_OFFSET hook.  */
 
@@ -54540,8 +54542,10 @@ ix86_addr_space_zero_address_valid (addr_space_t as)
 #undef TARGET_RETURN_POPS_ARGS
 #define TARGET_RETURN_POPS_ARGS ix86_return_pops_args
 
+#if 0
 #undef TARGET_LEGITIMATE_COMBINED_INSN
 #define TARGET_LEGITIMATE_COMBINED_INSN ix86_legitimate_combined_insn
+#endif
 
 #undef TARGET_ASAN_SHADOW_OFFSET
 #define TARGET_ASAN_SHADOW_OFFSET ix86_asan_shadow_offset
