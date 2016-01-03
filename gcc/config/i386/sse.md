@@ -832,8 +832,8 @@
 })
 
 (define_insn "*mov<mode>_internal"
-  [(set (match_operand:VMOVE 0 "vector_operand"			    "=v,v  ,Bm")
-	(match_operand:VMOVE 1 "vector_or_sse_const_operand"  "C ,vBm,v"))]
+  [(set (match_operand:VMOVE 0 "nonimmediate_operand"               "=v,v ,m")
+	(match_operand:VMOVE 1 "nonimmediate_or_sse_const_operand"  "C ,vm,v"))]
   "TARGET_SSE
    && (register_operand (operands[0], <MODE>mode)
        || register_operand (operands[1], <MODE>mode))"
